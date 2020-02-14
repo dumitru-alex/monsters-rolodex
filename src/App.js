@@ -15,9 +15,13 @@ class App extends React.Component {
         // See: https://reactjs.org/docs/handling-events.html
         // this.handleChange = this.handleChange.bind(this);
     }
-
     componentDidMount() {
-        fetch("https://jsonplaceholder.typicode.com/users", {mode: "no-cors"})
+        let headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', 'https://dumitru-alex.github.io/monsters-rolodex/')
+        fetch("https://jsonplaceholder.typicode.com/users", {
+            mode: "cors",
+            headers: headers
+            })
             .then(response => response.json())
             .then(users => this.setState({ monsters: users }));
     }
