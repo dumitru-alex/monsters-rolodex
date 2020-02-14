@@ -40,12 +40,9 @@ class App extends React.Component {
                 <h1>Monsters Rolodex</h1>
                 <SearchBox
                     placeholder="search monsters"
-                    // handleChange={e => {
-                    //     this.setState({ searchField: e.target.value });
-                    // }}
                     handleChange={this.handleChange}
                 />
-                <CardList monsters={filteredMonsters}></CardList>
+                <CardList monsters={filteredMonsters} />
             </div>
         );
     }
